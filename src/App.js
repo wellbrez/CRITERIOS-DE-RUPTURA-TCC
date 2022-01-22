@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Ensaios from "./Components/Ensaios";
+import Navbar from "./Components/Navbar";
+import ElementoDiferencial from "./Components/ElementoDiferencial";
+import CanvasEsquerdo from "./Components/CanvasEsquerdo";
+
+let propriedades = { sigmax: 50, sigmay: -50, tauxy: 50 };
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Ensaios />
+      <CanvasEsquerdo>
+        <ElementoDiferencial propriedades={propriedades} />
+      </CanvasEsquerdo>
     </div>
   );
 }

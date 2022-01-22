@@ -1,0 +1,24 @@
+.nav {
+  position: fixed;
+  background-color: green;
+  width: calc(50% - 12em);
+  right: 12em;
+}
+.nav ul {
+  background-color: red;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav ul li {
+  display: grid;
+  background-color: white;
+  place-items: center;
+  width: auto;
+  height: auto;
+  margin: 1em;
+}

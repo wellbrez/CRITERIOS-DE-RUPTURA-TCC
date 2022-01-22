@@ -1,0 +1,116 @@
+:root {
+  --base-value: min(3vw, 7vh);
+  --sigmax: -1;
+  --sigmay: -1;
+  --tauxy: -0.5;
+  --rotacao: 20deg;
+
+  --sigx: max(var(--sigmax), -1 * var(--sigmax));
+  --sigy: max(var(--sigmay), -1 * var(--sigmay));
+  --talxy: max(var(--tauxy), -1 * var(--tauxy));
+
+  --base-quadrado: calc(5 * var(--base-value));
+  --comprimento-seta: calc(3 * var(--base-value));
+  --largura-seta: calc(2 * var(--base-value));
+}
+.elemento {
+  width: calc(15 * var(--base-value));
+  height: calc(15 * var(--base-value));
+  width: 200%;
+  height: 200%;
+  display: grid;
+  place-items: center;
+  transform: rotate(var(--rotacao));
+}
+.controller {
+  background-color: red;
+  display: grid;
+  position: absolute;
+  width: calc(1 * var(--base-value));
+  height: calc(1 * var(--base-value));
+  border-radius: 100%;
+  transform: translateX(calc(7 * var(--base-value)));
+  transition: transform 0.5s;
+}
+.elemento span {
+  display: block;
+  position: absolute;
+  background-image: url("../seta.svg");
+  background-size: 100% 100%;
+  width: var(--comprimento-seta);
+  height: var(--largura-seta);
+}
+.quadrado {
+  width: var(--base-quadrado);
+  height: var(--base-quadrado);
+  filter: hue-rotate(0deg);
+  background: linear-gradient(90deg, rgb(247, 147, 30), rgb(133, 79, 17));
+}
+.elemento span:nth-child(1) {
+  transform: rotate(0deg)
+    translateX(
+      calc(
+        -1 * var(--base-quadrado) * 0.55 - var(--sigx) * var(
+            --comprimento-seta
+          ) / 2
+      )
+    )
+    scaleX(var(--sigmax));
+}
+.elemento span:nth-child(2) {
+  transform: rotate(90deg)
+    translateX(
+      calc(
+        -1 * var(--base-quadrado) * 0.55 - var(--sigy) * var(
+            --comprimento-seta
+          ) / 2
+      )
+    )
+    scaleX(var(--sigmay));
+}
+.elemento span:nth-child(3) {
+  transform: rotate(180deg)
+    translateX(
+      calc(
+        -1 * var(--base-quadrado) * 0.55 - var(--sigx) * var(
+            --comprimento-seta
+          ) / 2
+      )
+    )
+    scaleX(var(--sigmax));
+}
+.elemento span:nth-child(4) {
+  transform: rotate(270deg)
+    translateX(
+      calc(
+        -1 * var(--base-quadrado) * 0.55 - var(--sigy) * var(
+            --comprimento-seta
+          ) / 2
+      )
+    )
+    scaleX(var(--sigmay));
+}
+.elemento span:nth-child(5) {
+  filter: opacity(0.5);
+  transform: rotate(0deg)
+    translateY(calc(var(--base-quadrado) / 2 + var(--largura-seta) / 4))
+    scaleX(var(--tauxy));
+}
+.elemento span:nth-child(6) {
+  filter: opacity(0.5);
+  transform: rotate(90deg)
+    translateY(calc(-1 * var(--base-quadrado) / 2 - var(--largura-seta) / 4))
+    scaleX(var(--tauxy));
+}
+.elemento span:nth-child(7) {
+  filter: opacity(0.5);
+  transform: rotate(180deg)
+    translateY(calc(var(--base-quadrado) / 2 + var(--largura-seta) / 4))
+    scaleX(var(--tauxy));
+}
+.elemento span:nth-child(8) {
+  filter: opacity(0.5);
+  transform: rotate(270deg)
+    translateY(calc(-1 * var(--base-quadrado) / 2 - var(--largura-seta) / 4))
+    scaleX(var(--tauxy));
+}

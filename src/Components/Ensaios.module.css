@@ -1,0 +1,10 @@
+.form {
+  margin: 1em;
+  display: grid;
+  grid-template-rows: repeat(auto, 6);
+  width: 10em;
+  float: right;
+}
+.form .label {
+  margin-top: 20px;
+}
