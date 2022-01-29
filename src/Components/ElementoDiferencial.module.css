@@ -44,7 +44,8 @@
   width: var(--base-quadrado);
   height: var(--base-quadrado);
   filter: hue-rotate(0deg);
-  background: linear-gradient(90deg, rgb(247, 147, 30), rgb(133, 79, 17));
+  background: linear-gradient(90deg, #606c88, #3f4c6b);
+  border-radius: calc(var(--base-quadrado) / 10);
 }
 .elemento span:nth-child(1) {
   transform: rotate(0deg)
