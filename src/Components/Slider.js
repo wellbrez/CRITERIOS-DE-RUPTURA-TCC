@@ -14,6 +14,7 @@ const Slider = (props) => {
     props.onChange(value);
     setVal(value);
   }
+
   let titulo = props.titulo || "";
   let sufixo = props.sufixo || "";
   let min = Number(props.min);

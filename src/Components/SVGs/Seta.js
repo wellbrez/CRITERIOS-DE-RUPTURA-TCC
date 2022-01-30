@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import style from "./Seta.module.css";
 
 const Seta = (props) => {
-  let valor = props.valor * 300 || 0.00001;
+  let valor = props.valor * 400 || 0.00001;
   let cis = props.cis;
   let direcao = props.direcao;
+  let size = Number(props.size);
+  size = size / 20;
 
   let [svgwidth, svgheight] = [100, 100];
   if (!cis) {
@@ -99,7 +101,9 @@ const Seta = (props) => {
       height={svgheight}
       width={svgwidth}
       style={{
-        transform: `translateX(${x}) translateY(${y}) scale(${valor / 300})`,
+        transform: `translateX(${x}) translateY(${y}) scale(${
+          (valor * size) / 300
+        })`,
       }}
     >
       <path fill="black" d={ponta[direcao]} />
