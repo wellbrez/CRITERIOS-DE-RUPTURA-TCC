@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+
+  font-family: "Myriad Pro";
+}
+.slider {
+  display: grid;
+  border-radius: 2em;
+  grid-template-columns: 3.2em 5em 3.2em;
+  grid-template-rows: 2em 3em 2em;
+  grid-template-areas: "l2 sl l3" "tt tt tt" "vl vl vl";
+  place-items: center;
+  background: transparent;
+}
+.slider label {
+  font-size: smaller;
+  text-align: center;
+  color: rgb(218, 217, 217);
+}
+.slider input {
+  width: 100%;
+}
+.slider label:nth-child(1) {
+  grid-area: l2;
+}
+.slider label:nth-child(2) {
+  grid-area: l3;
+}
+.slider label:nth-child(3) {
+  display: grid;
+  place-items: center;
+  border: 4px solid rgb(226, 104, 3);
+  border-bottom: none;
+  color: rgb(224, 224, 224);
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 0.7em 0.7em 0 0;
+  grid-area: tt;
+}
+/*.slider label:nth-child(4) {
+  font-size: large;
+  grid-area: sf;
+}*/
+.slider input:nth-child(4) {
+  grid-area: vl;
+  font-size: x-large;
+  font-weight: bolder;
+  color: black;
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgb(226, 104, 3);
+  border-radius: 0em 0em 0.7em 0.7em;
+  outline: none;
+  background-color: rgb(243, 243, 243);
+  text-align: center;
+}
+.sl {
+  grid-area: sl;
+}
+.sl::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: linear-gradient(
+    90deg,
+    #c1c1c1,
+    #c5c5d3,
+    #9c9cad
+  ); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 100%;
+}
+.sl::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04aa6d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.sl {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 30%;
+  border-radius: 2em; /* Specified height */
+  background: linear-gradient(
+    90deg,
+    #c1c1c1,
+    #c5c5d3,
+    #9c9cad
+  ); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}

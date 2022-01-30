@@ -1,0 +1,12 @@
+.barra {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  place-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  background: linear-gradient(90deg, #606c88, #3f4c6b);
+  height: 10em;
+}

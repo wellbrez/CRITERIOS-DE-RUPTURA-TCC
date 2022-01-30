@@ -1,0 +1,10 @@
+.canvas {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  right: 0px;
+  /*background: rgba(0, 0, 0, 0.2);*/
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}

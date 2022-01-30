@@ -8,16 +8,12 @@ const DiagramaMohrCoulomb = (props) => {
   let compr = props.ensaios.compr;
   let trac = props.ensaios.trac;
   let [min, max] = [compr, trac];
-  console.log(min, max);
 
   let scale = size / (min + max);
-  console.log(scale);
   [min, max] = [scale * min, scale * max];
 
-  console.log(min, max);
   //let min = props.propriedades.min;
   //let max = props.propriedades.max;
-
   let coords = [
     { x: 0, y: -min },
     { x: +min, y: -max },
@@ -31,9 +27,8 @@ const DiagramaMohrCoulomb = (props) => {
   );
   bezier[0] = `M ${0 + (size + 40 - max - min) / 2} ${
     size - (size - 40 - max - min) / 2
-  } ${bezier[0]}`;
+  } ${bezier[0]} `;
   bezier = bezier.join("");
-  console.log(bezier);
   return (
     <svg className={style.white} width={size + 40} height={size + 40}>
       <defs>

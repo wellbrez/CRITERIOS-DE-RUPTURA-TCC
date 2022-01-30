@@ -1,23 +1,33 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
+
 import "./App.css";
-import Ensaios from "./Components/Ensaios";
+import BarraEnsaios from "./Components/BarraEnsaios";
 import Navbar from "./Components/Navbar";
 import ElementoDiferencial from "./Components/ElementoDiferencial";
 import CanvasEsquerdo from "./Components/CanvasEsquerdo";
+import CanvasDireito from "./Components/CanvasDireito";
 import DiagramaMohrCoulomb from "./Components/DiagramaMohrCoulomb";
-
-let propriedades = { sigmax: 500, sigmay: -50, tauxy: 500 };
-let ensaios = { compr: 100, trac: 100 };
+import BarraElemento from "./Components/BarraElemento";
 
 function App() {
+  const [ensaios, setEnsaios] = useState({ compr: 250, trac: 250, cis: 250 });
+  const [propriedades, setPropriedades] = useState({
+    sigmax: 0,
+    sigmay: 0,
+    tauxy: 0,
+  });
+
   return (
     <div className="App" on>
       <Navbar />
-      <Ensaios />
       <CanvasEsquerdo>
+        <BarraElemento onSetPropriedades={setPropriedades} />
         <ElementoDiferencial propriedades={propriedades} />
       </CanvasEsquerdo>
-      <DiagramaMohrCoulomb ensaios={ensaios} />
+      <CanvasDireito>
+        <BarraEnsaios onSetEnsaios={setEnsaios} />
+        <DiagramaMohrCoulomb ensaios={ensaios} />
+      </CanvasDireito>
     </div>
   );
 }
