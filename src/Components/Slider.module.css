@@ -1,6 +1,6 @@
 :root
 {
-  font-size:80%;
+  font-size:max(1.4vh,1vw);
 }
 * {
   box-sizing: border-box;
