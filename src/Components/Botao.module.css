@@ -1,0 +1,26 @@
+.btn
+{
+    width:100%;
+    height:100%;
+    padding-top:1em;
+    padding-bottom:1em;
+    padding-left:1.5em;
+    padding-right:1.5em;
+    font-size:small;
+    margin:0px;
+    color:black;
+    background:#f5af19;
+    border: 1px solid black;
+    font-style:italic;
+    font-weight:bold;
+    border-radius: 1em;
+}
+.btnc
+{
+    background:#f12711;
+}
+.btn:hover
+{
+    background:#f12711;
+    cursor:pointer;
+}

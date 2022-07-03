@@ -25,6 +25,7 @@ const BarraEnsaios = (props) => {
         sufixo="MPa"
         min="0.00001"
         max="500"
+        value={props.ensaios.compr}
         onChange={changeEnsaioComprHandler}
       />
       <Slider
@@ -32,6 +33,7 @@ const BarraEnsaios = (props) => {
         sufixo="MPa"
         min="0.00001"
         max="500"
+        value={props.ensaios.trac}
         onChange={changeEnsaioTracHandler}
       />
       <Slider
@@ -39,6 +41,7 @@ const BarraEnsaios = (props) => {
         sufixo="MPa"
         min="0.00001"
         max="500"
+        value={props.ensaios.cis}
         onChange={changeEnsaioCisHandler}
       />
     </div>

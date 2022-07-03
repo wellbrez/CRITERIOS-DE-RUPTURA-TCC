@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import style from "./ElementoDiferencial.module.css";
 import Seta from "./SVGs/Seta";
+
+function calculaCor(n)
+{
+  return `RGB(${(-n/500*127.5+127.5)},${(n/500*127.5+127.5)},125)`
+}
+
 const ElementoDiferencial = (props) => {
   let size = Number(props.size);
   let offset = `${size / 2 + size / 8}em`;
@@ -18,31 +24,39 @@ const ElementoDiferencial = (props) => {
 
   return (
     <div className={style.elemento}>
+      <p style={{left:-props.size*25}}>{props.propriedades.sigmax.toFixed(3)+" MPa"}</p>
+      <p style={{top:-props.size*20}}>{props.propriedades.sigmay.toFixed(3)+" MPa"}</p>
+      <p style={{top:-props.size*4,left:-props.size*10}}>{props.propriedades.tauxy.toFixed(3)+" MPa"}</p>
       <Seta
+        color={calculaCor(props.propriedades.sigmax)}
         size={props.size}
         direcao="direita"
         x={offset}
         valor={propriedades.sigmax}
       />
       <Seta
+        color={calculaCor(props.propriedades.sigmay)}
         size={props.size}
         direcao="baixo"
         y={offset}
         valor={propriedades.sigmay}
       />
       <Seta
+        color={calculaCor(props.propriedades.sigmay)}
         size={props.size}
         direcao="cima"
         y={"-" + offset}
         valor={propriedades.sigmay}
       />
       <Seta
+        color={calculaCor(props.propriedades.sigmax)}
         size={props.size}
         direcao="esquerda"
         x={"-" + offset}
         valor={propriedades.sigmax}
       />
       <Seta
+        color={calculaCor(props.propriedades.tauxy)}
         cis="true"
         size={props.size}
         direcao="direita"
@@ -50,6 +64,7 @@ const ElementoDiferencial = (props) => {
         valor={propriedades.tauxy}
       />
       <Seta
+        color={calculaCor(props.propriedades.tauxy)}
         cis="true"
         size={props.size}
         direcao="baixo"
@@ -57,6 +72,7 @@ const ElementoDiferencial = (props) => {
         valor={propriedades.tauxy}
       />
       <Seta
+        color={calculaCor(props.propriedades.tauxy)}
         cis="true"
         size={props.size}
         direcao="cima"
@@ -64,6 +80,7 @@ const ElementoDiferencial = (props) => {
         valor={propriedades.tauxy}
       />
       <Seta
+        color={calculaCor(props.propriedades.tauxy)}
         cis="true"
         size={props.size}
         direcao="esquerda"

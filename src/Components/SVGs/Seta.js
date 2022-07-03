@@ -106,9 +106,9 @@ const Seta = (props) => {
         })`,
       }}
     >
-      <path fill="black" d={ponta[direcao]} />
+      <path fill={props.color} d={ponta[direcao]} />
       <path
-        stroke="black"
+        stroke={props.color}
         strokeWidth="9"
         strokeLinejoin="round"
         d={linha[direcao]}

@@ -37,6 +37,7 @@ const BarraElemento = (props) => {
         sufixo="MPa"
         min="-500"
         max="500"
+        value={props.propriedades.sigmax}
         onChange={changeSigmaX}
       />
       <Slider
@@ -44,6 +45,7 @@ const BarraElemento = (props) => {
         sufixo="MPa"
         min="-500"
         max="500"
+        value={props.propriedades.sigmay}
         onChange={changeSigmaY}
       />
       <Slider
@@ -51,6 +53,7 @@ const BarraElemento = (props) => {
         sufixo="MPa"
         min="-500"
         max="500"
+        value={props.propriedades.tauxy}
         onChange={changeTauxy}
       />
     </div>

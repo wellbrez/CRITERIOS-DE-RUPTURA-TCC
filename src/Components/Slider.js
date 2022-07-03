@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "./Slider.module.css";
 const Slider = (props) => {
+  let usarval= false;
   function changeHandler(e) {
     e.preventDefault();
     let max = Number(props.max);
@@ -12,28 +13,28 @@ const Slider = (props) => {
     if (value > max) value = max;
     if (value < min) value = min;
     props.onChange(value);
-    setVal(value);
+    setVal(e.target.value);
   }
 
   let titulo = props.titulo || "";
   let sufixo = props.sufixo || "";
   let min = Number(props.min);
   let max = Number(props.max);
-  const [val, setVal] = useState((max + min) / 2);
-
+  const [val, setVal] = useState("1");
+  if(val.charAt(val.length-1)===".") usarval=true;
   return (
     <div className={style.slider}>
       <label>{`${Math.round(min)}${sufixo}`}</label>
       <label>{`${Math.round(max)}${sufixo}`}</label>
       <label>{titulo}</label>
-      <input value={Math.round(val * 100) / 100} onChange={changeHandler} />
+      <input value={usarval ? val : Math.round(props.value * 1000) / 1000} onChange={changeHandler} />
       <input
         className={style.sl}
         type="range"
         min={min}
         max={max}
-        step="0.001"
-        value={val}
+        step="0.0001"
+        value={props.value}
         onChange={changeHandler}
       />
     </div>

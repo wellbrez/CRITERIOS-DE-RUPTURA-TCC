@@ -1,5 +1,6 @@
 .elemento {
   display: grid;
+  position:absolute;
   place-items: center;
 }
 .elemento svg {
@@ -9,4 +10,8 @@
 .quadrado {
   background: linear-gradient(90deg, #606c88, #3f4c6b);
   border-radius: 0.6em;
+}
+p
+{
+  position:absolute;
 }
