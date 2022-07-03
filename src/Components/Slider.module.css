@@ -1,3 +1,7 @@
+:root
+{
+  font-size:80%;
+}
 * {
   box-sizing: border-box;
 
@@ -5,15 +9,16 @@
 }
 .slider {
   display: grid;
-  border-radius: 2em;
-  grid-template-columns: 3.2em 5em 3.2em;
-  grid-template-rows: 2em 3em 2em;
-  grid-template-areas: "l2 sl l3" "tt tt tt" "vl vl vl";
+  grid-template-columns: 2rem 3rem 2rem;
+  grid-template-rows: 1.2rem 1.1rem auto 1.4rem;
+  grid-template-areas: "sl sl sl" "l2 . l3" "tt tt tt" "vl vl vl";
   place-items: center;
   background: transparent;
 }
 .slider label {
-  font-size: smaller;
+  display:grid;
+  place-items:center;
+  font-size: .8rem;
   text-align: center;
   color: rgb(218, 217, 217);
 }
@@ -27,17 +32,15 @@
   grid-area: l3;
 }
 .slider label:nth-child(3) {
-  display: grid;
-  place-items: center;
-  border: 4px solid rgb(226, 104, 3);
+  margin-top:.4rem;
+  border: 2px solid rgb(226, 104, 3);
   border-bottom: none;
   color: rgb(224, 224, 224);
   width: 100%;
   height: 100%;
-  font-size: 100%;
   font-weight: bold;
   background-color: black;
-  border-radius: 0.7em 0.7em 0 0;
+  border-radius: 0.7rem 0.7rem 0 0;
   grid-area: tt;
 }
 /*.slider label:nth-child(4) {
@@ -46,13 +49,13 @@
 }*/
 .slider input:nth-child(4) {
   grid-area: vl;
-  font-size: x-large;
+  font-size: 1rem;
   font-weight: bolder;
   color: black;
   width: 100%;
   height: 100%;
-  border: 4px solid rgb(226, 104, 3);
-  border-radius: 0em 0em 0.7em 0.7em;
+  border: 2px solid rgb(226, 104, 3);
+  border-radius: 0rem 0rem 0.7rem 0.7rem;
   outline: none;
   background-color: rgb(243, 243, 243);
   text-align: center;
@@ -61,31 +64,37 @@
   grid-area: sl;
 }
 .sl::-webkit-slider-thumb {
+  padding:0;
+  margin:0;
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
+  width: 1.2rem; /* Set a specific slider handle width */
+  height: 1.2rem; /* Slider handle height */
   background: linear-gradient(
     90deg,
-    #c1c1c1,
-    #c5c5d3,
-    #9c9cad
+    rgb(226, 104, 3),
+    rgb(247, 12, 3),
+    rgb(226, 104, 3)
   ); /* Green background */
   cursor: pointer; /* Cursor on hover */
   border-radius: 100%;
 }
 .sl::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
+  padding:0;
+  margin:0;
+  width: 1.2rem; /* Set a specific slider handle width */
+  height: .5rem; /* Slider handle height */
   background: #04aa6d; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 .sl {
+  padding:0;
+  margin:0;
   -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
-  height: 30%;
-  border-radius: 2em; /* Specified height */
+  height: .5rem;
+  border-radius: 2rem; /* Specified height */
   background: linear-gradient(
     90deg,
     #c1c1c1,

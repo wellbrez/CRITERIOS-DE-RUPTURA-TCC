@@ -3,8 +3,6 @@
   flex-direction:row;
   flex-wrap:wrap;
   justify-content:space-evenly;
-  bottom: 0;
-  padding-bottom:1em;
   left: 0;
   width:100%;
   background: linear-gradient(90deg, #606c88, #3f4c6b);

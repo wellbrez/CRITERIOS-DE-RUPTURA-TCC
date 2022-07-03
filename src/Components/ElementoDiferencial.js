@@ -8,7 +8,7 @@ function calculaCor(n)
 }
 
 const ElementoDiferencial = (props) => {
-  let size = Number(props.size);
+  let size = Number(props.size)*1.3;
   let offset = `${size / 2 + size / 8}em`;
   let maxprop = 0;
   for (let prop in props.propriedades) {
@@ -24,9 +24,9 @@ const ElementoDiferencial = (props) => {
 
   return (
     <div className={style.elemento}>
-      <p style={{left:-props.size*25}}>{props.propriedades.sigmax.toFixed(3)+" MPa"}</p>
-      <p style={{top:-props.size*20}}>{props.propriedades.sigmay.toFixed(3)+" MPa"}</p>
-      <p style={{top:-props.size*4,left:-props.size*10}}>{props.propriedades.tauxy.toFixed(3)+" MPa"}</p>
+      <p style={{left:-props.size*32}}>{props.propriedades.sigmax.toFixed(3)+" MPa"}</p>
+      <p style={{top:-props.size*24}}>{props.propriedades.sigmay.toFixed(3)+" MPa"}</p>
+      <p style={{top:-props.size*4,left:-props.size*15}}>{props.propriedades.tauxy.toFixed(3)+" MPa"}</p>
       <Seta
         color={calculaCor(props.propriedades.sigmax)}
         size={props.size}

@@ -15,6 +15,6 @@
   .App
   {
     grid-template-columns:1fr;
-    grid-template-rows:1fr 1fr;
+    grid-template-rows:40vh 60vh;
   }
 }

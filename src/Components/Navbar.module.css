@@ -12,23 +12,23 @@
   list-style: none;
   justify-content:space-evenly;
   margin: 0;
-  padding: 1em;
+  padding: 1rem;
   width:100%;
   height:auto;
 }
 .nav ul li {
   display: grid;
   place-items: center;
-  width: 10em;
+  width: 10rem;
   height: auto;
-  margin: .2em;
+  margin: .2rem;
 }
 .vertical{
-  padding: 0em;
+  padding: 0rem;
   position:absolute;
   flex-direction:column;
 }
 .vertical li{
   margin:0;
-  width:5em;
+  width:5rem;
 }
