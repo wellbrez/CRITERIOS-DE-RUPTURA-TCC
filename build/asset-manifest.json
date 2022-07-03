@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/CRITERIOS-DE-RUPTURA-TCC/static/css/main.d58b323c.css",
-    "main.js": "/CRITERIOS-DE-RUPTURA-TCC/static/js/main.2412a156.js",
-    "static/js/787.cb5f3ad6.chunk.js": "/CRITERIOS-DE-RUPTURA-TCC/static/js/787.cb5f3ad6.chunk.js",
-    "index.html": "/CRITERIOS-DE-RUPTURA-TCC/index.html",
-    "main.d58b323c.css.map": "/CRITERIOS-DE-RUPTURA-TCC/static/css/main.d58b323c.css.map",
-    "main.2412a156.js.map": "/CRITERIOS-DE-RUPTURA-TCC/static/js/main.2412a156.js.map",
-    "787.cb5f3ad6.chunk.js.map": "/CRITERIOS-DE-RUPTURA-TCC/static/js/787.cb5f3ad6.chunk.js.map"
+    "main.css": "/CRITERIOS-DE-RUPTURA-TCC/build/static/css/main.d58b323c.css",
+    "main.js": "/CRITERIOS-DE-RUPTURA-TCC/build/static/js/main.4d38dfec.js",
+    "static/js/787.cb5f3ad6.chunk.js": "/CRITERIOS-DE-RUPTURA-TCC/build/static/js/787.cb5f3ad6.chunk.js",
+    "index.html": "/CRITERIOS-DE-RUPTURA-TCC/build/index.html",
+    "main.d58b323c.css.map": "/CRITERIOS-DE-RUPTURA-TCC/build/static/css/main.d58b323c.css.map",
+    "main.4d38dfec.js.map": "/CRITERIOS-DE-RUPTURA-TCC/build/static/js/main.4d38dfec.js.map",
+    "787.cb5f3ad6.chunk.js.map": "/CRITERIOS-DE-RUPTURA-TCC/build/static/js/787.cb5f3ad6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d58b323c.css",
-    "static/js/main.2412a156.js"
+    "static/js/main.4d38dfec.js"
   ]
 }
