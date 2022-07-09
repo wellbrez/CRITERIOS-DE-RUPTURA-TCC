@@ -15,5 +15,7 @@ p
 {
   position:absolute;
   font-size:.7rem;
-  font-family:Arial;
+  font-family:montserrat;
+  font-weight:bolder;
+  color:rgb(63,76,107);
 }

@@ -115,7 +115,7 @@ export default function sketch(p){
           return Math.max(a, b);
         }, -Infinity);
 
-      let escala = canvas.width/4/(maxcoord||0.01);
+      let escala = canvas.width/4/(maxcoord||0.01)*0.8;
       //escala = canvas.width/4/(maxcoord + 170/escala);
 
       p.clear();
