@@ -68,8 +68,13 @@ export default function sketch(p){
         p.translate(x,y);
         p.vertex(x,y);
         p.textSize(12/escala);
-        p.text(coordenadas[0]+" = "+x.toFixed(2)+" MPa",xtext,Math.min(ytext,ytext2));
-        p.text(coordenadas[1]+" = "+(-y).toFixed(2)+" MPa",xtext,Math.max(ytext,ytext2));
+        p.push()
+      p.strokeWeight(1/escala);
+      p.stroke(63,76,107);
+      p.fill("black");
+      p.text(coordenadas[0]+" = "+x.toFixed(2)+" MPa",xtext,Math.min(ytext,ytext2));
+      p.text(coordenadas[1]+" = "+(-y).toFixed(2)+" MPa",xtext,Math.max(ytext,ytext2));
+      p.pop()
         p.pop();
     }
     function pontoEnvoltoriaSeguranca(x,y,p,escala,fs)
@@ -123,7 +128,7 @@ export default function sketch(p){
           }, -Infinity);
 
         let escala = canvas.width/4/(maxcoord||0.01);
-        escala = canvas.width/4/(maxcoord + 170/escala);
+        //escala = canvas.width/4/(maxcoord + 170/escala);
 
         p.clear();
         p.push();

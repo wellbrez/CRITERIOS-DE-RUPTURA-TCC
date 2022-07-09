@@ -8,6 +8,7 @@ const Botao= (props) => {
   
   let cn = style.btn;
   if (props.selected) cn+=" "+style.btnc;
+  if (props.visible!=undefined && !props.visible) cn+=" "+style.invisible
   return <button onClick = {selectHandler} className={cn}>{props.children}</button>;
 };
 

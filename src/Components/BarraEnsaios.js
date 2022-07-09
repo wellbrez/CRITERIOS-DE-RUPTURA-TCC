@@ -18,30 +18,50 @@ const BarraEnsaios = (props) => {
       return { compr: ensaios.compr, trac: ensaios.trac, cis: vl };
     });
   };
+  let visivel = [true,true,true];
+  let titulo = ["TENSÃO ÚTLIMA DE COMPRESSÃO","TENSÃO ÚLTIMA DE TRAÇÃO","TENSÃO ÚLTIMA DE CISALHAMENTO"];
+  if(props.sketch==5||props.sketch==7)
+  {
+    visivel = [false,true,false];
+    titulo = ["TENSÃO ÚTLIMA DE COMPRESSÃO","TENSÃO LIMITE DE ESCOAMENTO","TENSÃO ÚTLIMA DE CISALHAMENTO"]
+  }
+  if(props.sketch==2||props.sketch==3)
+  {
+    visivel = [true,true,false];
+  }
   return (
     <div className={style.barra}>
       <Slider
-        titulo="TENSÃO ÚTLIMA DE COMPRESSÃO"
+        titulo={titulo[0]}
         sufixo="MPa"
-        min="0.00001"
-        max="500"
+        min={props.minmax.compr.min}
+        max={props.minmax.compr.max}
         value={props.ensaios.compr}
+        visivel={visivel[0]}
+        setMin={props.functminmax.compr.min}
+        setMax={props.functminmax.compr.max}
         onChange={changeEnsaioComprHandler}
       />
       <Slider
-        titulo="TENSÃO ÚTLIMA DE TRAÇÃO"
+        titulo={titulo[1]}
         sufixo="MPa"
-        min="0.00001"
-        max="500"
+        min={props.minmax.trac.min}
+        max={props.minmax.trac.max}
         value={props.ensaios.trac}
+        visivel={visivel[1]}
+        setMin={props.functminmax.trac.min}
+        setMax={props.functminmax.trac.max}
         onChange={changeEnsaioTracHandler}
       />
       <Slider
-        titulo="TENSÃO ÚTLIMA DE CISALHAMENTO"
+        titulo={titulo[2]}
         sufixo="MPa"
-        min="0.00001"
-        max="500"
+        min={props.minmax.cis.min}
+        max={props.minmax.cis.max}
         value={props.ensaios.cis}
+        visivel={visivel[2]}
+        setMin={props.functminmax.cis.min}
+        setMax={props.functminmax.cis.max}
         onChange={changeEnsaioCisHandler}
       />
     </div>

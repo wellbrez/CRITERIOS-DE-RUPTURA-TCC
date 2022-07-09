@@ -24,3 +24,7 @@
     background:#f12711;
     cursor:pointer;
 }
+.btn.invisible
+{
+    display:none;
+}

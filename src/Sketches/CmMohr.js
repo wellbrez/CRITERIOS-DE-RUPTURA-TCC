@@ -216,6 +216,12 @@ export default function sketch(p){
       p.line(p5x,p5y,p6x,p6y);
       p.line(p7x,p7y,p8x,p8y);
 
+      p.textSize(20/escala);
+      p.stroke(63,76,107)
+      p.fill(63,76,107)
+      p.text(" σut = "+ensaios.trac.toFixed(2)+" MPa",ensaios.trac,-4/escala);
+      p.text(" σuc = "+ensaios.compr.toFixed(2)+" MPa",-ensaios.compr-200/escala,-4/escala);
+      p.text(" τmax = "+ensaios.cis.toFixed(2)+" MPa",ensaios.cis/2*Math.sqrt(2),-ensaios.cis);
 
 
       p.stroke(fsfill);

@@ -12,8 +12,14 @@ const Navbar = (props) => {
   }
   function selectBtn(num)
   {
+    let mode = Number(selectedMode);
+    if(num==="2"||num==="3") 
+    {
+      setSelectedMode("1");
+      mode = 1;
+    }
     setSelectedBtn(num);
-    props.onSketchActivate(Number(num)*2+Number(selectedMode));
+    props.onSketchActivate(Number(num)*2+mode);
   }
   
   return (
@@ -25,7 +31,7 @@ const Navbar = (props) => {
         <Guia selected={selectedBtn==="3"} tagid="3" onSelect ={selectBtn}>MÁXIMA ENERGIA DE DISTORÇÃO</Guia>
       </Seletor>
       <Seletor className={style.vertical}>
-        <Guia selected={selectedMode==="0"} tagid="0" onSelect ={selectMode}>Círculo de Mohr</Guia>
+        <Guia selected={selectedMode==="0"} visible ={selectedBtn==="0"||selectedBtn==="1"}tagid="0" onSelect ={selectMode}>Círculo de Mohr</Guia>
         <Guia selected={selectedMode==="1"} tagid="1" onSelect ={selectMode}>Área segura</Guia>
       </Seletor>
     </nav>

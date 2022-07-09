@@ -30,29 +30,37 @@ const BarraElemento = (props) => {
       };
     });
   };
+
+
   return (
     <div className={style.barra}>
       <Slider
         titulo="σx (MPa)"
         sufixo="MPa"
-        min="-500"
-        max="500"
+        min={props.minmax.sigmax.min}
+        max={props.minmax.sigmax.max}
+        setMin={props.functminmax.sigmax.min}
+        setMax={props.functminmax.sigmax.max}
         value={props.propriedades.sigmax}
         onChange={changeSigmaX}
       />
       <Slider
         titulo="σy (MPa)"
         sufixo="MPa"
-        min="-500"
-        max="500"
+        min={props.minmax.sigmay.min}
+        max={props.minmax.sigmay.max}
+        setMin={props.functminmax.sigmay.min}
+        setMax={props.functminmax.sigmay.max}
         value={props.propriedades.sigmay}
         onChange={changeSigmaY}
       />
       <Slider
         titulo="Τxy (MPa)"
         sufixo="MPa"
-        min="-500"
-        max="500"
+        min={props.minmax.tauxy.min}
+        max={props.minmax.tauxy.max}
+        setMin={props.functminmax.tauxy.min}
+        setMax={props.functminmax.tauxy.max}
         value={props.propriedades.tauxy}
         onChange={changeTauxy}
       />
