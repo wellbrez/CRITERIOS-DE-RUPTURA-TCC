@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import style from "./ElementoDiferencial.module.css";
 import Seta from "./SVGs/Seta";
 
-function calculaCor(n)
-{
-  return `RGB(${(-n/500*127.5+127.5)},${(n/500*127.5+127.5)},125)`
-}
+
 
 const ElementoDiferencial = (props) => {
+  const calculaCor = (n) =>
+  {
+    let maxrange = Math.max(Number(props.minmax.sigmax.max),Number(props.minmax.sigmay.max),Number(props.minmax.tauxy.max));
+    return `RGB(${(-n/maxrange*127.5+127.5)},${(n/maxrange*127.5+127.5)},125)`
+  }
   let size = Number(props.size)*1.3;
   let offset = `${size / 2 + size / 8}em`;
   let maxprop = 0;

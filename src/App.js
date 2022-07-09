@@ -25,31 +25,21 @@ function useWindowSize() {
 }
 
 //Define os comandos que ficam ativos para cada modulo
-const LAYOUT_ENSAIOS = 
-{
-  0:[true,true,true],
-  1:[true,true,true],
-  2:[true,true,false],
-  3:[true,true,false],
-  4:[false,true,false],
-  5:[false,true,false],
-  6:[false,true,false],
-  7:[false,true,false],
-}
+
 
 function App() {
-  const [minsigmax,setminsigmax] = useState(-500);
-  const [minsigmay,setminsigmay] = useState(-500);
-  const [mintauxy,setmintauxy] = useState(-500);
+  const [minsigmax,setminsigmax] = useState(-50);
+  const [minsigmay,setminsigmay] = useState(-50);
+  const [mintauxy,setmintauxy] = useState(-50);
   const [mintrac,setmintrac] = useState(0.001);
   const [mincompr,setmincompr] = useState(0.001);
   const [mincis,setmincis] = useState(0.001);
-  const [maxsigmax,setmaxsigmax] = useState(500);
-  const [maxsigmay,setmaxsigmay] = useState(500);
-  const [maxtauxy,setmaxtauxy] = useState(500);
-  const [maxtrac,setmaxtrac] = useState(500);
-  const [maxcompr,setmaxcompr] = useState(500);
-  const [maxcis,setmaxcis] = useState(500);
+  const [maxsigmax,setmaxsigmax] = useState(50);
+  const [maxsigmay,setmaxsigmay] = useState(50);
+  const [maxtauxy,setmaxtauxy] = useState(50);
+  const [maxtrac,setmaxtrac] = useState(100);
+  const [maxcompr,setmaxcompr] = useState(50);
+  const [maxcis,setmaxcis] = useState(50);
   let functminmax = 
   {
     sigmax:{min:setminsigmax,max:setmaxsigmax},
@@ -96,13 +86,13 @@ function App() {
   return (
     <div className="App">
       <CanvasEsquerdo>
-        <ElementoDiferencial size={sizescreen} propriedades={propriedades} />
+        <ElementoDiferencial minmax={minmax} size={sizescreen} propriedades={propriedades} />
         <BarraElemento minmax={minmax} functminmax={functminmax} propriedades = {propriedades} onSetPropriedades={setPropriedades} />
       </CanvasEsquerdo>
       
       <CanvasDireito>
         <Navbar onSketchActivate={setActiveSketch}/>
-        <P5canvas onSetEnsaios={setEnsaios} ensaios={ensaios} propriedades={propriedades} layout={LAYOUT_ENSAIOS[activeSketch]} activeSketch = {activeSketch}/>
+        <P5canvas onSetEnsaios={setEnsaios} ensaios={ensaios} propriedades={propriedades}  activeSketch = {activeSketch}/>
 
         <BarraEnsaios minmax={minmax} functminmax={functminmax} sketch={activeSketch} ensaios = {ensaios} onSetEnsaios={setEnsaios} />
         

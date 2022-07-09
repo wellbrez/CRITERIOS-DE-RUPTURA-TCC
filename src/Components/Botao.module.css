@@ -17,11 +17,13 @@
 }
 .btnc
 {
-    background:#f12711;
+    background:#791409;
+    color:#f5af19;
 }
 .btn:hover
 {
-    background:#f12711;
+    background:#791409;
+    color:#f5af19;
     cursor:pointer;
 }
 .btn.invisible
