@@ -4,7 +4,7 @@
   height: auto;
   min-height:100vh;
   overflow-x:hidden;
-  overflow-y:scroll;
+  overflow-y:hidden;
   background: linear-gradient(90deg, #c1c1c1, #c5c5d3, #9c9cad);
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -15,6 +15,6 @@
   .App
   {
     grid-template-columns:1fr;
-    grid-template-rows:40vh 60vh;
+    grid-template-rows:40vh 50vh;
   }
 }
