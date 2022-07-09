@@ -1,8 +1,7 @@
 .App {
   text-align: center;
   width: 100vw;
-  height: auto;
-  min-height:100vh;
+  height: 100vh;
   overflow-x:hidden;
   overflow-y:hidden;
   background: linear-gradient(90deg, #c1c1c1, #c5c5d3, #9c9cad);
@@ -14,6 +13,7 @@
 {
   .App
   {
+    max-height:90vh;
     grid-template-columns:1fr;
     grid-template-rows:40vh 50vh;
   }

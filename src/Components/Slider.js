@@ -36,8 +36,8 @@ const Slider = (props) => {
 
   return (
     <div className={classe}>
-      <label><input class={style.minmax} onChange={changeMin} value={`${Math.round(min)}`}></input></label>
-      <label><input class={style.minmax} onChange={changeMax} value={`${Math.round(max)}`}></input></label>
+      <label><input className={style.minmax} onChange={changeMin} value={`${Math.round(min)}`}></input></label>
+      <label><input className={style.minmax} onChange={changeMax} value={`${Math.round(max)}`}></input></label>
       <label>{titulo}</label>
       <input value={usarval ? val : Math.round(props.value * 1000) / 1000} onChange={changeHandler} />
       <input
