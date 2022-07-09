@@ -8,9 +8,10 @@ const Slider = (props) => {
     let max = Number(props.max);
     let min = Number(props.min);
     let value = Number(e.target.value);
-    if (Number.isNaN(Number(e.target.value))) {
-      value = min;
+    if (Number.isNaN(value)) {
+      return;
     }
+    if(e.target.value==="") return;
     if (value > max) value = max;
     if (value < min) value = min;
     props.onChange(value);
@@ -18,11 +19,17 @@ const Slider = (props) => {
   }
   function changeMax(e)
   {
+    let value = e.target.value;
+    if(Number(e.target.value)==0) value="0.001";
+    if(Number.isNaN(e.target.value)) return
     props.setMax(e.target.value);
   }
   function changeMin(e)
   {
-    props.setMin(e.target.value);
+    let value = e.target.value;
+    if(Number(e.target.value)==0) value="0.001";
+    if(Number.isNaN(e.target.value)) return
+    props.setMin(value);
   }
 
   let titulo = props.titulo || "";

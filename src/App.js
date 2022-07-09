@@ -41,9 +41,9 @@ function App() {
   const [minsigmax,setminsigmax] = useState(-500);
   const [minsigmay,setminsigmay] = useState(-500);
   const [mintauxy,setmintauxy] = useState(-500);
-  const [mintrac,setmintrac] = useState(0);
-  const [mincompr,setmincompr] = useState(0);
-  const [mincis,setmincis] = useState(0);
+  const [mintrac,setmintrac] = useState(0.001);
+  const [mincompr,setmincompr] = useState(0.001);
+  const [mincis,setmincis] = useState(0.001);
   const [maxsigmax,setmaxsigmax] = useState(500);
   const [maxsigmay,setmaxsigmay] = useState(500);
   const [maxtauxy,setmaxtauxy] = useState(500);
