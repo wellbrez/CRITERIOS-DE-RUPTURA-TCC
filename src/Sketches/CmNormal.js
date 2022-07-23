@@ -117,6 +117,8 @@ export default function sketch(p){
   }
   p.draw = () => 
   {
+    
+    p.textStyle(p.BOLD)
       fs = calcularFs();
       p.resizeCanvas(document.querySelector("canvas").parentElement.parentElement.clientWidth,document.querySelector("canvas").parentElement.parentElement.clientHeight-1)
       let arraypontos = [ensaios.trac,ensaios.compr,ensaios.cis*2,Math.abs(pex),Math.abs(pey),Math.abs(pex-pey)]
@@ -132,6 +134,7 @@ export default function sketch(p){
       p.translate(canvas.width/2,canvas.height/2)
       linhasSecundarias(p,canvas,escala);
       
+      
       p.push();
       p.scale(escala);
       p.fill(63,76,107);
@@ -139,7 +142,10 @@ export default function sketch(p){
       p.ellipse((ensaios.trac-ensaios.compr)/2,0,(ensaios.trac+ensaios.compr),(ensaios.trac+ensaios.compr))
       p.ellipse(-ensaios.compr/2,0,ensaios.compr,ensaios.compr)
       p.ellipse(ensaios.trac/2,0,ensaios.trac,ensaios.trac)
-
+      p.push()
+      p.scale(1/escala);
+      linhasPrincipais(p,canvas);
+      p.pop()
       p.fill(0,0,0,0);
       p.strokeWeight(2/escala);
       p.stroke("black");
@@ -149,19 +155,28 @@ export default function sketch(p){
       p.ellipse((ensaios.trac-ensaios.compr)/2,0,(ensaios.trac+ensaios.compr),(ensaios.trac+ensaios.compr))
       p.textSize(20/escala);
       p.stroke(63,76,107)
-      p.fill(63,76,107)
+      p.fill("black")
       p.textSize(12/escala);
+      
       p.strokeWeight(1/escala);
       p.text(" σut = "+ensaios.trac.toFixed(2)+" MPa",ensaios.trac,-4/escala);
       p.text(" σuc = "+ensaios.compr.toFixed(2)+" MPa",-ensaios.compr-110/escala,-4/escala);
 
-
+      p.strokeWeight(4/escala);
       p.stroke(fsfill);
-      p.fill(0,0,0,0)
+      p.fill(0,0,0,50);
       p.ellipse(meio,0,raio*2,raio*2);
-      p.ellipse(propriedades.sigmax,propriedades.tauxy,4/escala,4/escala);
-      p.ellipse(propriedades.sigmay,-propriedades.tauxy,4/escala,4/escala);
+      p.fill(63,76,107);
+      p.ellipse(propriedades.sigmax,propriedades.tauxy,10/escala,10/escala);
+      p.ellipse(propriedades.sigmay,-propriedades.tauxy,10/escala,10/escala);
       
+      p.fill(fsfill);
+      p.stroke("Black");
+      p.strokeWeight(1/escala);
+      
+      p.text(`PX (${propriedades.sigmax.toFixed(2)},${(-propriedades.tauxy/2).toFixed(2)})`,propriedades.sigmax+7/escala,propriedades.tauxy);
+      p.text(`PY (${propriedades.sigmay.toFixed(2)},${(propriedades.tauxy/2).toFixed(2)})`,propriedades.sigmay+7/escala,-propriedades.tauxy);
+
 
 
 
@@ -169,12 +184,7 @@ export default function sketch(p){
       p.fill(fsfill)
       p.strokeWeight(3/escala)
       
-      p.fill("blue");
-      p.stroke("black")
-      p.pop();
-      p.push();
-      p.textFont("arial");
-      linhasPrincipais(p,canvas);
+      
       
       //p.text(escala,0,0);
       
@@ -188,14 +198,14 @@ export default function sketch(p){
       p.strokeWeight(2);
       p.textFont("montserrat");
       p.textSize(20);
-      p.text(`F.S.: ${fs.toFixed(2)}`,canvas.width-110,canvas.height-70,120,70)
+      p.textStyle(p.NORMAL); p.text(`F.S.: ${fs.toFixed(2)}`,canvas.width-110,canvas.height-70,120,70)
       p.text(`${resultado}`,canvas.width-100,canvas.height-40,120,70)
       p.pop();
       //p.text(ensaios,x, 100, 100, 100);
   }
   p.updateWithProps = (props) => {
      //Make sure the canvas has been created
-     if(canvas)
+     if(true)
      {
          layout = props.layout;
          ensaios = JSON.parse(JSON.stringify(props.ensaios));

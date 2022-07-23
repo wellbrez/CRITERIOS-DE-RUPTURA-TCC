@@ -35,7 +35,7 @@ const BarraElemento = (props) => {
   return (
     <div className={style.barra}>
       <Slider
-        titulo="σx (MPa)"
+        titulo="Tensão axial horizontal - σx (MPa)"
         sufixo="MPa"
         min={props.minmax.sigmax.min}
         max={props.minmax.sigmax.max}
@@ -45,7 +45,7 @@ const BarraElemento = (props) => {
         onChange={changeSigmaX}
       />
       <Slider
-        titulo="σy (MPa)"
+        titulo="Tensão axial vertical - σy (MPa)"
         sufixo="MPa"
         min={props.minmax.sigmay.min}
         max={props.minmax.sigmay.max}
@@ -55,7 +55,9 @@ const BarraElemento = (props) => {
         onChange={changeSigmaY}
       />
       <Slider
-        titulo="Τxy (MPa)"
+        titulo="Tensão de cisalhamento 
+        - Τxy (MPa)"
+
         sufixo="MPa"
         min={props.minmax.tauxy.min}
         max={props.minmax.tauxy.max}

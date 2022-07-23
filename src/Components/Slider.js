@@ -1,4 +1,3 @@
-import { getSpaceUntilMaxLength } from "@testing-library/user-event/dist/utils";
 import React, { useState } from "react";
 import style from "./Slider.module.css";
 const Slider = (props) => {
@@ -33,7 +32,6 @@ const Slider = (props) => {
   }
 
   let titulo = props.titulo || "";
-  let sufixo = props.sufixo || "";
   let min = Number(props.min)||1;
   let max = Number(props.max)||1;
   const [val, setVal] = useState("1");

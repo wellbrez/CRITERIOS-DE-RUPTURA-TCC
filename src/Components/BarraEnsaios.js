@@ -19,11 +19,11 @@ const BarraEnsaios = (props) => {
     });
   };
   let visivel = [true,true,true];
-  let titulo = ["TENSÃO ÚTLIMA DE COMPRESSÃO","TENSÃO ÚLTIMA DE TRAÇÃO","TENSÃO ÚLTIMA DE CISALHAMENTO"];
+  let titulo = ["Tensão última de compressão (MPa)","Tensão última de tração (MPa)","Tensão última de cisalhamento (MPa)"];
   if(props.sketch==5||props.sketch==7)
   {
     visivel = [false,true,false];
-    titulo = ["TENSÃO ÚTLIMA DE COMPRESSÃO","TENSÃO LIMITE DE ESCOAMENTO","TENSÃO ÚTLIMA DE CISALHAMENTO"]
+    titulo = ["Tensão última de compressão (MPa)","Tensão limite de escoamento (MPa)","Tensão última de cisalhamento (MPa)"]
   }
   if(props.sketch==2||props.sketch==3)
   {

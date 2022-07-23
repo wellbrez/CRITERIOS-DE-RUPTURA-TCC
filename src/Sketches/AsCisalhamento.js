@@ -2,15 +2,13 @@ export default function sketch(p){
     let canvas;
     let ensaios = {compr:0,trac:0,cis:0};
     let propriedades = {sigmax:0,sigmay:0,tauxy:0};
-    let layout={};
     let pex = 0;
     let pey = 0;
     let coordenadas = ["σa","σb"];
-    let canvasx = 100;
-    let canvasy = 100;
     let fs=.5;
     let resultado = "Falha";
     let fsfill = "gray";
+    let init;
     function linhasPrincipais(p,canvas)
     {
         p.push()
@@ -111,15 +109,18 @@ export default function sketch(p){
     }
 
     p.setup = () => {
+        
       canvas = p.createCanvas(document.querySelector("canvas").parentElement.parentElement.clientWidth,document.querySelector("canvas").parentElement.parentElement.clientHeight-1);
       p.noStroke();
       p.background("transparent");
       p.textFont("montserrat");
+      init=true;
       //p.ellipseMode(p.CENTER);
       //p.ellipse(0, 0, 100, 100);
     }
     p.draw = () => 
     {
+        p.textStyle(p.BOLD)
         fs = calcularFs();
         p.resizeCanvas(document.querySelector("canvas").parentElement.parentElement.clientWidth,document.querySelector("canvas").parentElement.parentElement.clientHeight-1)
         let arraypontos = [Math.abs(pex),Math.abs(pey),ensaios.trac,ensaios.compr,ensaios.cis]
@@ -183,16 +184,14 @@ export default function sketch(p){
         p.strokeWeight(2);
         p.textFont("montserrat");
         p.textSize(20);
-        p.text(`F.S.: ${fs.toFixed(2)}`,canvas.width-110,canvas.height-70,120,70)
+        p.textStyle(p.NORMAL); p.text(`F.S.: ${fs.toFixed(2)}`,canvas.width-110,canvas.height-70,120,70)
         p.text(`${resultado}`,canvas.width-100,canvas.height-40,120,70)
         p.pop();
         //p.text(ensaios,x, 100, 100, 100);
     }
     p.updateWithProps = (props) => {
        //Make sure the canvas has been created
-       if(canvas)
-       {
-           layout = props.layout;
+       
            ensaios = props.ensaios;
            propriedades = props.propriedades;
            ensaios = {
@@ -206,7 +205,7 @@ export default function sketch(p){
             pey = meio - raio;
             
             
-       }
+       
        
         
     }

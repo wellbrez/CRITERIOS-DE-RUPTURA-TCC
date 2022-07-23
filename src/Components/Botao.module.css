@@ -9,11 +9,12 @@
     font-size:0.8rem;
     margin:0px;
     color:black;
-    background:#f5af19;
-    border: 1px solid black;
+    background:linear-gradient(90deg, #f5af19, #ffbd2d, #ffd16e);;
+    border: 1px solid rgba(0, 0, 0, 0.171);
     font-style:italic;
     font-weight:bold;
-    border-radius: .5rem;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px black, -2px -2px 5px white;
 }
 .btnc
 {

@@ -10,8 +10,8 @@ const ElementoDiferencial = (props) => {
     let maxrange = Math.max(Number(props.minmax.sigmax.max),Number(props.minmax.sigmay.max),Number(props.minmax.tauxy.max));
     return `RGB(${(-n/maxrange*127.5+127.5)},${(n/maxrange*127.5+127.5)},125)`
   }
-  let size = Number(props.size)*1.3;
-  let offset = `${size / 2 + size / 8}em`;
+  let size = Number(props.size)*0.8;
+  let offset = `${size / 2 + size / 4}em`;
   let maxprop = 0;
   for (let prop in props.propriedades) {
     if (maxprop < Math.abs(props.propriedades[prop])) {
@@ -26,9 +26,9 @@ const ElementoDiferencial = (props) => {
 
   return (
     <div className={style.elemento}>
-      <p style={{left:-props.size*32}}>{props.propriedades.sigmax.toFixed(3)+" MPa"}</p>
+      <p style={{left:-props.size*40}}>{props.propriedades.sigmax.toFixed(3)+" MPa"}</p>
       <p style={{top:-props.size*24}}>{props.propriedades.sigmay.toFixed(3)+" MPa"}</p>
-      <p style={{top:-props.size*4,left:-props.size*15}}>{props.propriedades.tauxy.toFixed(3)+" MPa"}</p>
+      <p style={{top:-props.size*8,left:-props.size*20}}>{props.propriedades.tauxy.toFixed(3)+" MPa"}</p>
       <Seta
         color={calculaCor(props.propriedades.sigmax)}
         size={props.size}

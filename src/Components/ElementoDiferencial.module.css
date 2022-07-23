@@ -2,20 +2,23 @@
   display: grid;
   position:absolute;
   place-items: center;
+  margin-bottom:10%;
 }
 .elemento svg {
   display: block;
   position: absolute;
+  
 }
 .quadrado {
   background: linear-gradient(90deg, #606c88, #3f4c6b);
   border-radius: 0.6rem;
+  box-shadow: 2px 2px 4px black, -2px -2px 4px white;
 }
 p
 {
   position:absolute;
-  font-size:.7rem;
+  font-size:auto;
   font-family:montserrat;
   font-weight:bolder;
-  color:rgb(63,76,107);
+  color:black;
 }

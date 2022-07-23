@@ -121,6 +121,7 @@ export default function sketch(p){
   }
   p.draw = () => 
   {
+    p.textStyle(p.BOLD)
       fs = calcularFs();
       p.resizeCanvas(document.querySelector("canvas").parentElement.parentElement.clientWidth,document.querySelector("canvas").parentElement.parentElement.clientHeight-1)
       let arraypontos = [Math.abs(pex),Math.abs(pey),ensaios.trac,ensaios.compr,ensaios.cis]
@@ -179,14 +180,14 @@ export default function sketch(p){
       p.strokeWeight(2);
       p.textFont("montserrat");
       p.textSize(20);
-      p.text(`F.S.: ${fs.toFixed(2)}`,canvas.width-110,canvas.height-70,120,70)
+      p.textStyle(p.NORMAL); p.text(`F.S.: ${fs.toFixed(2)}`,canvas.width-110,canvas.height-70,120,70)
       p.text(`${resultado}`,canvas.width-100,canvas.height-40,120,70)
       p.pop();
       //p.text(ensaios,x, 100, 100, 100);
   }
   p.updateWithProps = (props) => {
      //Make sure the canvas has been created
-     if(canvas)
+     if(true)
      {
          layout = props.layout;
          ensaios = JSON.parse(JSON.stringify(props.ensaios));
